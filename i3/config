@@ -204,14 +204,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+i exec "rofi -show run"
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Polybar config
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#         status_command i3blocks
-#         tray_output primary
-#         position top
-# }
+bar {
+        status_command i3blocks
+        tray_output primary
+        position top
+}
 
 # ------------------------------------------
 # CUSTOM KEYS START
