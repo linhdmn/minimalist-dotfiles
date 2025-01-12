@@ -100,7 +100,8 @@ bindsym $mod+Shift+d exec --no-startup-id i3-msg '[workspace=__focused__] floati
 #bindsym $mod+d focus child
 # for_window [floating] sticky disable
 for_window [workspace=10] floating enable
-for_window [workspace=3] floating enable
+# for_window [workspace=3] floating enable
+for_window [workspace=4] floating enable
 
 # for_window [class=".*"] exec --no-startup-id sh -c 'if grep -q "$(i3-msg -t get_workspaces | jq -r ".[] | select(.focused==true).name")" /tmp/i3_floating_state; then i3-msg floating enable; fi'
 # Floating layout. Float all windows in a workspace.

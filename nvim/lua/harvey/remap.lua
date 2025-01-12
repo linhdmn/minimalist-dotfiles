@@ -98,3 +98,4 @@ vim.api.nvim_set_keymap("n", "<leader>mp", ":MarkdownPreview<CR>", { noremap = t
 vim.api.nvim_set_keymap('v', '<leader>be', ':B64Encode<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>bd', ':B64Decode<cr>', { noremap = true, silent = true })
 
+

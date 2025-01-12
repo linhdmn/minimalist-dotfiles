@@ -3,5 +3,5 @@
 # ibus session bus with the below address.
 # If the IBUS_ADDRESS environment variable is set, it will
 # be used rather than this file.
-IBUS_ADDRESS=unix:path=/home/linhdmn/.cache/ibus/dbus-lL7iSqiM,guid=85b9e0bbd9b685c6da7139156731c0b3
-IBUS_DAEMON_PID=94050
+IBUS_ADDRESS=unix:path=/home/linhdmn/.cache/ibus/dbus-pO94hr44,guid=31199b12ee0fb3b174af5e82678091d9
+IBUS_DAEMON_PID=94798

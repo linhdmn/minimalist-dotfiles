@@ -5,7 +5,7 @@ SOURCE="$HOME/.config"
 DESTINATION="$HOME/work/minimalist-dotfiles"
 
 # List of directories to copy
-CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "systemd" "ranger")
+CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "ranger")
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION"
