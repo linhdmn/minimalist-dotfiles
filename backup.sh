@@ -20,6 +20,6 @@ for DIR in "${CONFIG_DIRS[@]}"; do
         echo "Directory $DIR does not exist in $SOURCE. Skipping..."
     fi
 done
-
+rsync -av ~/.tmux.conf "$DESTINATION/"
 echo "Selected configuration files have been copied to $DESTINATION."
 
