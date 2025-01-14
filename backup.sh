@@ -2,7 +2,7 @@
 
 # Define the source and destination paths
 SOURCE="$HOME/.config"
-DESTINATION="$HOME/work/minimalist-dotfiles"
+DESTINATION="./minimalist-dotfiles"
 
 # List of directories to copy
 CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "ranger")
