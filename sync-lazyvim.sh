@@ -12,12 +12,12 @@ mkdir -p "$DESTINATION"
 
 # Loop through each directory and copy if it exists
 for DIR in "${CONFIG_DIRS[@]}"; do
-  if [ -d "$SOURCE/$DIR" ]; then
-    echo "Copying $DIR to $DESTINATION"
-    # Use rsync with --exclude to ignore .git folders
-    rsync -av --exclude='.git' "$SOURCE/$DIR" "$DESTINATION/"
-  else
-    echo "Directory $DIR does not exist in $SOURCE. Skipping..."
-  fi
+    if [ -d "$SOURCE/$DIR" ]; then
+        echo "Copying $DIR to $DESTINATION"
+        # Use rsync with --exclude to ignore .git folders
+        rsync -av --exclude='.git' "$SOURCE/$DIR" "$DESTINATION/"
+    else
+        echo "Directory $DIR does not exist in $SOURCE. Skipping..."
+    fi
 done
 echo "Selected configuration files have been copied to $DESTINATION."
