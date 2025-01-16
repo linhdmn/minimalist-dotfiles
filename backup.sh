@@ -2,7 +2,7 @@
 
 # Define the source and destination paths
 SOURCE="$HOME/.config"
-DESTINATION="./minimalist-dotfiles"
+DESTINATION="./"
 
 # List of directories to copy
 CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "ranger")
@@ -21,5 +21,5 @@ for DIR in "${CONFIG_DIRS[@]}"; do
     fi
 done
 rsync -av ~/.tmux.conf "$DESTINATION/"
+rsync -av ~/.config/picom.conf "$DESTINATION/"
 echo "Selected configuration files have been copied to $DESTINATION."
-
