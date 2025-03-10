@@ -5,7 +5,7 @@ SOURCE="$HOME/.config"
 DESTINATION="./"
 
 # List of directories to copy
-CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "ranger")
+CONFIG_DIRS=("i3" "i3config" "i3status" "polybar" "nvim" "picom" "rofi" "ibus" "ibus-bamboo" "ranger", "conky")
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION"
