@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SOURCE="./minimalist-dotfiles/nvim-config"
-DESTINATION="$HOME/.config/nvim"
+SOURCE="$HOME/.config/nvim"
+DESTINATION="./idol-nvim"
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION"

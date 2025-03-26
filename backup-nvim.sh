@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the source and destination paths
-SOURCE="$(pwd)/lazyvim/nvim"
+SOURCE="$(pwd)/simple-nvim"
 DESTINATION="$HOME/.config/nvim"
 
 mv ~/.config/nvim/ ~/.config/nvim.bk
