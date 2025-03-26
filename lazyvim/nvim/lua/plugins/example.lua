@@ -199,6 +199,7 @@ return {
         "vim",
         "yaml",
         "go",
+        "hyprlang",
       },
     },
   },

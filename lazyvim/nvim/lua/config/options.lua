@@ -17,3 +17,12 @@ vim.api.nvim_create_autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
   end,
 })
+
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+vim.cmd("syntax on") -- Enable regex-based highlighting
+
+vim.opt.termguicolors = true
+vim.g.t_Co = 256
+vim.g.background = "dark"
