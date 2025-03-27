@@ -92,3 +92,5 @@ vim.api.nvim_set_keymap("n", "<Leader>o", "", {
 })
 
 vim.api.nvim_set_keymap("n", "<leader>mp", ":MarkdownPreview<CR>", { noremap = true, silent = true })
+
+
