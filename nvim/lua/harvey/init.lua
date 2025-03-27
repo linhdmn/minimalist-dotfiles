@@ -168,12 +168,3 @@ vim.api.nvim_set_hl(0, "Keyword", { bold = true })
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
 vim.api.nvim_set_hl(0, "Constant", { fg = "#999999" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#333333" })
-
--- Ensure that 'commentstring' is correctly set for Terraform files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "terraform",
-  callback = function()
-    vim.bo.commentstring = "# %s"
-  end,
-})
-
