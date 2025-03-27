@@ -4,3 +4,7 @@ title = " "shell-integration = none
 title = " "
 
 window-decoration = false
+
+font-family = FiraCode Nerd Font Mono
+font-size = 15
+
