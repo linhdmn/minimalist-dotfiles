@@ -16,34 +16,34 @@ return {
           italic = false,
         },
         -- Override specific colors in the theme
-        extend_base_groups = {
-          background = "#191724",
-          background_nc = "#191724",
-          panel = "#191724",
-          panel_nc = "#191724",
-          border = "#403d52",
-        },
-        highlight_groups = {
-          Normal = { bg = "#191724" },
-          NormalNC = { bg = "#191724" },
-          NormalFloat = { bg = "#191724" },
-          FloatBorder = { bg = "#191724", fg = "#403d52" },
-          StatusLine = { bg = "#191724" },
-          StatusLineNC = { bg = "#191724" },
-          SignColumn = { bg = "#191724" },
-          LineNr = { bg = "#191724" },
-          CursorLine = { bg = "#26233a" },
-          Visual = { bg = "#eb6f92", fg = "#ffffff" }, -- 🌟 Stronger contrast
-          VisualNOS = { bg = "#eb6f92", fg = "#ffffff" }, -- Inactive selection
-          CursorLineNr = { fg = "#e0def4", bold = true }, -- Makes current line number visible
-        },
-        before_highlight = function(group, highlight, palette)
-          -- Override the background universally
-          if highlight.background then
-            highlight.background = "#191724"
-          end
-          return highlight
-        end,
+        -- extend_base_groups = {
+        --   background = "#191724",
+        --   background_nc = "#191724",
+        --   panel = "#191724",
+        --   panel_nc = "#191724",
+        --   border = "#403d52",
+        -- },
+        -- highlight_groups = {
+        --   Normal = { bg = "#191724" },
+        --   NormalNC = { bg = "#191724" },
+        --   NormalFloat = { bg = "#191724" },
+        --   FloatBorder = { bg = "#191724", fg = "#403d52" },
+        --   StatusLine = { bg = "#191724" },
+        --   StatusLineNC = { bg = "#191724" },
+        --   SignColumn = { bg = "#191724" },
+        --   LineNr = { bg = "#191724" },
+        --   CursorLine = { bg = "#26233a" },
+        --   Visual = { bg = "#eb6f92", fg = "#ffffff" }, -- 🌟 Stronger contrast
+        --   VisualNOS = { bg = "#eb6f92", fg = "#191724" }, -- Inactive selection
+        --   CursorLineNr = { fg = "#e0def4", bold = true }, -- Makes current line number visible
+        -- },
+        -- before_highlight = function(group, highlight, palette)
+        --   -- Override the background universally
+        --   if highlight.background then
+        --     highlight.background = "#191724"
+        --   end
+        --   return highlight
+        -- end,
       })
 
       -- Set colorscheme after configuration
