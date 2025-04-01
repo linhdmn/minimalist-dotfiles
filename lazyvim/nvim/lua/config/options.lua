@@ -8,9 +8,6 @@ vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.smartindent = true -- Enable smart indentation
 
--- vim.cmd("colorscheme rose-pine")
---
-
 vim.opt.colorcolumn = "100"
 vim.cmd([[highlight ColorColumn ctermbg=lightgrey guibg=lightgrey]])
 

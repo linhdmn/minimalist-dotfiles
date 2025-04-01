@@ -10,8 +10,10 @@ return {
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
-        api_key_name = "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",
-        model = "google/gemini-2.5-pro-exp-03-25:free",
+        api_key_name = "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",
+        -- model = "google/gemini-2.5-pro-exp-03-25:free",
+        -- model = "anthropic/claude-3.7-sonnet:thinking",
+        model = "deepseek/deepseek-r1:free",
       },
     },
     {
