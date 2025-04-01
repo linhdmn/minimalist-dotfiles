@@ -13,12 +13,12 @@ return {
   { "ellisonleao/gruvbox.nvim" },
 
   -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
 
   -- change trouble config
   {
@@ -62,71 +62,7 @@ return {
       },
     },
   },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        gopls = {
-          settings = {
-            gopls = {
-              gofumpt = true,
-              codelenses = {
-                gc_details = false,
-                generate = true,
-                regenerate_cgo = true,
-                run_govulncheck = true,
-                test = true,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-              },
-              hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
-              analyses = {
-                fieldalignment = true,
-                nilness = true,
-                unusedparams = true,
-                unusedwrite = true,
-                useany = true,
-              },
-              usePlaceholders = true,
-              completeUnimported = true,
-              staticcheck = true,
-              directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-              semanticTokens = true,
-            },
-          },
-        },
-      },
-      setup = {
-        gopls = function(_, opts)
-          -- workaround for gopls not supporting semanticTokensProvider
-          -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
-          LazyVim.lsp.on_attach(function(client, _)
-            if not client.server_capabilities.semanticTokensProvider then
-              local semantic = client.config.capabilities.textDocument.semanticTokens
-              client.server_capabilities.semanticTokensProvider = {
-                full = true,
-                legend = {
-                  tokenTypes = semantic.tokenTypes,
-                  tokenModifiers = semantic.tokenModifiers,
-                },
-                range = true,
-              }
-            end
-          end, "gopls")
-          -- end workaround
-        end,
-      },
-    },
-  },
+
   -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -171,6 +107,46 @@ return {
         end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
+      },
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "mfussenegger/nvim-jdtls", -- Java LSP support
+    },
+    opts = {
+      servers = {
+        jdtls = {
+          cmd = { "jdtls" }, -- Ensure jdtls is in your PATH
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("pom.xml", "gradle.build", ".git")(fname) or vim.fn.getcwd()
+          end,
+          settings = {
+            java = {
+              signatureHelp = { enabled = true },
+              contentProvider = { preferred = "fernflower" },
+              eclipse = { downloadSources = true },
+              configuration = {
+                updateBuildConfiguration = "interactive",
+                runtimes = {
+                  {
+                    name = "Java-18",
+                    path = "/Users/harvey/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home", -- Change this to your Java 17 path
+                  },
+                },
+              },
+              maven = { downloadSources = true },
+              implementationsCodeLens = { enabled = true },
+              referencesCodeLens = { enabled = true },
+              format = { enabled = true },
+            },
+          },
+          init_options = {
+            bundles = {},
+          },
+        },
       },
     },
   },
@@ -256,8 +232,6 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
-        "goimports",
-        "gofumpt",
       },
     },
   },

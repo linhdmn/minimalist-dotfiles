@@ -69,6 +69,8 @@ return {
       end
     end
 
+    vim.opt.termguicolors = true
+    vim.opt.background = "dark"
     if opts.adapters then
       local adapters = {}
       for name, config in pairs(opts.adapters or {}) do
