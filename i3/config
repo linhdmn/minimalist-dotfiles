@@ -136,7 +136,8 @@ bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # Polybar config
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh --material
 exec_always --no-startup-id conky -c ~/.conkyrc &
 
 # CUSTOM KEYS START
@@ -176,7 +177,9 @@ exec_always --no-startup-id greenclip daemon > /dev/null 2>&1
 # Fullscreen screenshot
 bindsym $mod+Shift+p exec --no-startup-id scrot ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
 # Screenshot of selected area
-bindsym $mod+Control+p exec --no-startup-id sh -c 'maim -s ~/Pictures/selected_screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'
+# bindsym $mod+Control+p exec --no-startup-id sh -c 'maim -s ~/Pictures/selected_screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'
+exec_always --no-startup-id flameshot
+bindsym $mod+Control+p exec --no-startup-id flameshot gui
 
 set $Locker i3lock && sleep 1
 
@@ -197,9 +200,8 @@ mode "$mode_system" {
 bindsym $mod+p mode "$mode_system"
 bindsym $mod+Shift+a exec --no-startup-id "systemctl --user restart picom.service"
 bindsym $mod+Shift+s exec --no-startup-id "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
-
 # Add top padding so windows don’t overlap the bar
-gaps top 30
+# gaps top 30
 # gaps bottom 35
 gaps inner 10
 exec_always --no-startup-id blueman-applet
